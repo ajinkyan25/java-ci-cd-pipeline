@@ -7,7 +7,8 @@ pipeline {
     stages{
         stage('git checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/ManojKRISHNAPPA/test-1.git'
+                git branch: 'main', url: 'https://github.com/BASAVANAGOWDADK/java-ci-cd-pipeline
+.git'
             }
         }
         stage('compile'){
@@ -17,26 +18,26 @@ pipeline {
         }
         stage('Build'){
             steps{
-                sh "mvn clean install" 
+                sh "mvn clean install"
             }
         }
         stage('Build and Tag Docker file'){
             steps{
-                sh "docker build -t manojkrishnappa/project:1 ."
+                sh "docker build -t basavanagowdadk/java-ci-cd-pipeline:1 ."
             }
         }
         stage('Docker image scan'){
             steps{
-                 sh "trivy image --format table -o trivy-image-report.html manojkrishnappa/project:1"
+                 sh "trivy image --format table -o trivy-image-report.html basavanagowdadk/java-ci-cd-pipeline:1"
             }
         }
 
         stage('Containersation'){
             steps{
-                sh '''
+                sh ''' 
                     docker stop c1
                     docker rm c1
-                    docker run -it -d --name c1 -p 9002:8080 manojkrishnappa/project:1
+                    docker run -it -d --name c1 -p 9002:8080 basavanagowdadk/java-ci-cd-pipeline:1
                 '''
             }
         }
@@ -52,7 +53,7 @@ pipeline {
         }
         stage('Pushing image to repository'){
             steps{
-                sh 'docker push manojkrishnappa/project:1'
+                sh 'docker push basavanagowdadk/java-ci-cd-pipeline:1'
             }
         }
     }
