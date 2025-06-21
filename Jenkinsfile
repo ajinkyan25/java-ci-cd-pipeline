@@ -7,25 +7,28 @@ pipeline {
     stages{
         stage('git checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/BASAVANAGOWDADK/java-ci-cd-pipeline
-.git'
+                git branch: 'main', url: 'https://github.com/BASAVANAGOWDADK/java-ci-cd-pipeline.git'
             }
         }
+        
         stage('compile'){
             steps{
                 sh "mvn compile"
             }
         }
+        
         stage('Build'){
             steps{
                 sh "mvn clean install"
             }
         }
+        
         stage('Build and Tag Docker file'){
             steps{
                 sh "docker build -t basavanagowdadk/java-ci-cd-pipeline:1 ."
             }
         }
+        
         stage('Docker image scan'){
             steps{
                  sh "trivy image --format table -o trivy-image-report.html basavanagowdadk/java-ci-cd-pipeline:1"
@@ -43,13 +46,13 @@ pipeline {
         }
 
         stage('Login to Docker Hub') {
-                    steps {
-                        script {
-                            withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                                sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
-                            }
-                        }
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
                     }
+                }
+            }
         }
         stage('Pushing image to repository'){
             steps{
