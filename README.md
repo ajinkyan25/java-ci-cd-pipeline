@@ -92,15 +92,3 @@ This script was run at the time of EC2 VM creation to automate installation of:
 📄 **Script File**: [`ec2-setup.sh`](./ec2-setup.sh)
 
 ---
-
-## 🙋‍♂️ Author
-
-**Basavanagowda DK**  
-🚀 Full Stack Developer | DevOps Enthusiast  
-📫 [LinkedIn](https://www.linkedin.com/in/basavanagowdadk)
-
----
-
-## 📃 License
-
-MIT License
