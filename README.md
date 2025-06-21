@@ -70,7 +70,7 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 
 ## 📜 Logs as Proof
 
-Console output from Jenkins pipeline execution is saved in [`#1.txt`](./#1.txt).
+Console output from Jenkins pipeline execution is saved in [`#1.txt`](https://github.com/BASAVANAGOWDADK/java-ci-cd-pipeline/#1.txt).
 
 ---
 
