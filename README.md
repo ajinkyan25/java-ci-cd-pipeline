@@ -65,7 +65,7 @@
 ![Credentials](./screenshots/cred.png)
 
 ### 4. DockerHub Repository
-![DockerHub](./screenshots/docker%20repo.png)
+![DockerHub](./screenshots/docker.png)
 
 ### 5. Web Application Running
 ![Web App](./screenshots/page.png)
