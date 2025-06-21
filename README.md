@@ -1,95 +1,105 @@
-# 🚀 DevOps Java WebApp Pipeline
+# Java CI/CD Pipeline with Jenkins, Docker, and GitHub
 
-This project demonstrates a complete DevOps pipeline for a Java-based web application using **Maven**, **Jenkins**, and **Docker**. It includes build automation, Docker image creation, and CI/CD configuration via a Jenkins pipeline.
+This project showcases a complete CI/CD pipeline built using **Jenkins**, **Docker**, and **GitHub**, deployed on an **AWS EC2 VM**. The VM was configured using a custom shell script during creation, which installs Jenkins, Docker, and Trivy.
+
+## 🧰 Tools Used
+- Jenkins (Pipeline automation)
+- Maven (Build tool)
+- Docker (Containerization)
+- Trivy (Security scanning)
+- GitHub (Source code repo)
+- DockerHub (Image registry)
+- AWS EC2 (Deployment server)
 
 ---
 
-## 📁 Project Structure
+## 📂 Repository Structure
 
 ```
 .
-├── Jenkinsfile                # Jenkins CI/CD pipeline
-├── Dockerfile                 # Docker containerization file
-├── Dockertagupdate.sh         # Shell script for Docker tagging
-├── pom.xml                    # Maven project file
-├── server/
-│   └── src/main/java          # Java source code
-├── webapp/
-│   ├── index.html             # Web front-end (HTML)
-│   ├── WEB-INF/web.xml        # Web configuration
-│   ├── *.jpg                  # Image assets
+├── Dockerfile
+├── Jenkinsfile
+├── README.md
+├── #1.txt                 <-- Jenkins Build Console Log (proof)
+├── screenshots/
+│   ├── cred.png
+│   ├── docker repo.png
+│   ├── logs.png
+│   ├── page.png
+│   └── stages.png
 ```
 
 ---
 
-## ⚙️ Tech Stack
+## 🪄 Pipeline Overview
 
-- **Java 11**
-- **Maven**
-- **Jenkins**
-- **Docker**
-- **HTML / JSP (webapp)**
-
----
-
-## 🔄 Jenkins Pipeline Stages
-
-The `Jenkinsfile` defines a multi-stage pipeline:
-
-1. **Git Checkout** – Pulls code from the `main` branch.
-2. **Compile** – Uses `mvn compile` to compile the Java project.
-3. **Build** – Packages the app using `mvn package`.
-4. **Build & Push Docker Image** – Builds a Docker image from the app source.
+1. **SCM Checkout** – Clones code from GitHub
+2. **Tool Setup** – Sets up Java 11 and Maven
+3. **Build** – Compiles & packages Java project using Maven
+4. **Docker Build** – Builds image from Dockerfile
+5. **Security Scan** – Trivy image scan
+6. **Deployment** – Runs container on EC2 and exposes app on port 9002
+7. **Push to DockerHub** – Uses Jenkins credentials to publish image
 
 ---
 
-## 🐳 Docker
+## 📸 Screenshots
 
-To build and run the image manually:
+### 1. Jenkins Pipeline View
+![Pipeline](./screenshots/stages.png)
+
+### 2. Jenkins Console Output
+![Console Logs](./screenshots/logs.png)
+
+### 3. Jenkins Credentials Setup
+![Credentials](./screenshots/cred.png)
+
+### 4. DockerHub Repository
+![DockerHub](./screenshots/docker repo.png)
+
+### 5. Web Application Running
+![Web App](./screenshots/page.png)
+
+---
+
+## 📜 Logs as Proof
+
+Console output from Jenkins pipeline execution is saved in [`#1.txt`](./#1.txt).
+
+---
+
+## 📦 DockerHub Link
+
+[basavanagowdadk/java-ci-cd-pipeline](https://hub.docker.com/repository/docker/basavanagowdadk/java-ci-cd-pipeline/general)
+
+---
+
+## 🖥️ EC2 VM Setup Script (Used in User Data)
+
+This script was run at the time of EC2 VM creation to automate installation of:
+- Java
+- Git
+- Jenkins
+- Docker
+- Trivy
 
 ```bash
-# Build Docker image
-docker build -t java-webapp .
-
-# Run container
-docker run -p 3000:3000 java-webapp
+#!/bin/bash
+set -e
+# ... script lines ...
+# Refer to full script in user-data or setup docs
 ```
 
 ---
 
-## 🛠 How to Run Locally
-
-```bash
-# Compile
-mvn compile
-
-# Package
-mvn package
-
-# Run with Docker
-docker build -t java-webapp .
-docker run -p 3000:3000 java-webapp
-```
-
----
-
-## 📦 Future Enhancements
-
-- Integrate **SonarQube** for code quality analysis
-- Add **unit testing stage** with `mvn test`
-- Automate Docker image push to DockerHub
-- Set up **GitHub Actions** for CI/CD
-
----
-
-## 👨‍💻 Author
+## 🙋‍♂️ Author
 
 **Basavanagowda DK**  
-Full Stack Developer | DevOps Enthusiast  
-[LinkedIn](#) • [GitHub](#)
+🚀 Full Stack Developer | DevOps Enthusiast  
+📫 [LinkedIn](https://www.linkedin.com/in/basavanagowdadk)
 
 ---
 
-## 📄 License
+## 📃 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+MIT License
