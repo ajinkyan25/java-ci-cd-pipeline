@@ -1,6 +1,10 @@
 # Java CI/CD Pipeline with Jenkins, Docker, and GitHub
 
-This project showcases a complete CI/CD pipeline built using **Jenkins**, **Docker**, and **GitHub**, deployed on an **AWS EC2 VM**. The VM was configured using a custom shell script during creation, which installs Jenkins, Docker, and Trivy.
+> ⚡ **End-to-End DevOps Project** | AWS EC2 | Jenkins + Docker + Trivy + DockerHub  
+>
+> This project showcases my ability to build a fully automated CI/CD pipeline from scratch — including provisioning, building, scanning, containerizing, and deploying a Java application using modern DevOps tools.
+
+---
 
 ## 🧰 Tools Used
 - Jenkins (Pipeline automation)
@@ -22,6 +26,7 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 ├── Dockertagupdate.sh              <-- Script to update Docker tag
 ├── Jenkinsfile-private             <-- Jenkins pipeline script
 ├── README.md                       <-- Project documentation
+├── ec2-setup.sh                    <-- EC2 provisioning script
 ├── pom.xml                         <-- Maven project descriptor (root)
 ├── screenshots/                    <-- Images for README
 │   ├── cred.png
@@ -32,7 +37,6 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 ├── server/                         <-- Backend source code (Maven module)
 ├── webapp/                         <-- Web frontend module
 .
-
 ```
 
 ---
@@ -61,7 +65,7 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 ![Credentials](./screenshots/cred.png)
 
 ### 4. DockerHub Repository
-![DockerHub](./screenshots/docker.png)
+![DockerHub](./screenshots/docker%20repo.png)
 
 ### 5. Web Application Running
 ![Web App](./screenshots/page.png)
@@ -70,7 +74,7 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 
 ## 📜 Logs as Proof
 
-Console output from Jenkins pipeline execution is saved in [`#1.txt`](https://github.com/BASAVANAGOWDADK/java-ci-cd-pipeline/#1.txt).
+Console output from Jenkins pipeline execution is saved in [`#1.txt`](https://github.com/BASAVANAGOWDADK/java-ci-cd-pipeline/blob/main/%231.txt).
 
 ---
 
@@ -92,3 +96,29 @@ This script was run at the time of EC2 VM creation to automate installation of:
 📄 **Script File**: [`ec2-setup.sh`](./ec2-setup.sh)
 
 ---
+
+## 🎯 Why This Project Matters
+
+- ✅ Simulates a **real-world DevOps pipeline** used in startups and enterprises
+- 🔄 Full CI/CD workflow with Jenkins, Maven, Docker, and GitHub
+- 🛡️ Integrated security with **Trivy** image scans
+- ☁️ Built using infrastructure-as-code on **AWS EC2**
+- 📦 Dockerized and pushed to **DockerHub**, then deployed live
+
+---
+
+## 👋 Looking for DevOps or Cloud Roles
+
+I'm actively seeking DevOps Engineer or Cloud Developer opportunities.  
+If you're hiring or know someone who is, feel free to connect with me:
+
+- 📧 Email: basavanagowdadk@gmail.com  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/basavanagowda-d-k-b6b56a1a2)
+  
+Let's build something amazing together!
+
+---
+
+## 📃 License
+
+MIT License
