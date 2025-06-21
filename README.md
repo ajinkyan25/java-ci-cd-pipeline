@@ -89,12 +89,7 @@ This script was run at the time of EC2 VM creation to automate installation of:
 - Docker
 - Trivy
 
-```bash
-#!/bin/bash
-set -e
-# ... script lines ...
-# Refer to full script in user-data or setup docs
-```
+📄 **Script File**: [`ec2-setup.sh`](./ec2-setup.sh)
 
 ---
 
