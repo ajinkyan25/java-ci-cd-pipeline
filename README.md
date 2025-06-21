@@ -17,16 +17,22 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 
 ```
 .
-├── Dockerfile
-├── Jenkinsfile
-├── README.md
-├── #1.txt                 <-- Jenkins Build Console Log (proof)
-├── screenshots/
+├── #1.txt                          <-- Jenkins Build Console Log
+├── Dockerfile                      <-- Docker instructions
+├── Dockertagupdate.sh              <-- Script to update Docker tag
+├── Jenkinsfile-private             <-- Jenkins pipeline script
+├── README.md                       <-- Project documentation
+├── pom.xml                         <-- Maven project descriptor (root)
+├── screenshots/                    <-- Images for README
 │   ├── cred.png
 │   ├── docker repo.png
 │   ├── logs.png
 │   ├── page.png
 │   └── stages.png
+├── server/                         <-- Backend source code (Maven module)
+├── webapp/                         <-- Web frontend module
+.
+
 ```
 
 ---
@@ -55,7 +61,7 @@ This project showcases a complete CI/CD pipeline built using **Jenkins**, **Dock
 ![Credentials](./screenshots/cred.png)
 
 ### 4. DockerHub Repository
-![DockerHub](./screenshots/docker repo.png)
+![DockerHub](./screenshots/docker.png)
 
 ### 5. Web Application Running
 ![Web App](./screenshots/page.png)
